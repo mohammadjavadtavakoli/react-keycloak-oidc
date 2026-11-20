@@ -1,22 +1,31 @@
-# ورود با Keycloak
+# React Keycloak OIDC
 
-برنامه تنظیمات اتصال و ورود را از فایل [`src/keycloak.config.js`](src/keycloak.config.js) می‌خواند. برای اتصال به سرور خودتان، مقادیر `keycloakConfig` را در همان فایل تغییر دهید.
+A simple React application demonstrating authentication with Keycloak using OpenID Connect (OIDC).
 
-| گزینه | مقدار فعلی | توضیح |
-| --- | --- | --- |
-| `url` | `http://localhost:8080` | آدرس پایه Keycloak. اگر سرور با مسیر پایه `/auth` نصب شده، آن مسیر را هم وارد کنید. |
-| `realm` | `my-front` | نام Realm |
-| `clientId` | `react-spa` | شناسه کلاینت عمومی OpenID Connect |
+## Features
 
-آدرس بازگشت (`redirectUri`) در `keycloakInitOptions` از آدرس فعلی برنامه و مسیر پایه Vite ساخته می‌شود. برای استفاده از آدرس بازگشت ثابت، همان گزینه را در فایل تنظیمات تغییر دهید. برای اعمال تغییرات در نسخهٔ منتشرشده، دوباره `npm run build` را اجرا کنید.
+- Keycloak integration
+- OpenID Connect authentication
+- Authorization Code Flow with PKCE
+- Access Token handling
 
-در تنظیمات کلاینت Keycloak، **Client authentication** را روی **Off** و **Standard flow** را روی **On** قرار دهید. اگر روش PKCE را در تنظیمات کلاینت تعیین می‌کنید، **S256** را انتخاب کنید.
+## Configuration
 
-برای اجرای محلی روی پورت پیش‌فرض Vite، `http://localhost:5173/` را در **Valid Redirect URIs** و `http://localhost:5173` را در **Web Origins** وارد کنید. اگر آدرس یا پورت برنامه متفاوت است، آدرس واقعی بازگشت و origin همان برنامه را ثبت کنید.
+Update the Keycloak settings in `src/keycloak.config.js`:
 
-```sh
-npm ci
+- Server URL
+- Realm
+- Client ID
+
+## Run
+
+```bash
+npm install
 npm run dev
 ```
 
-صفحه را باز کنید و روی «ورود با Keycloak» بزنید. بعد از ورود، Access Token در یک فیلد فقط‌خواندنی نمایش داده می‌شود. برنامه توکن را در حافظه صفحه نگه می‌دارد.
+## Requirements
+
+- Node.js
+- Docker (for running Keycloak)
+
