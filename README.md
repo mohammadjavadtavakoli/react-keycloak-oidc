@@ -11,7 +11,7 @@ A simple React application demonstrating authentication with Keycloak using Open
 
 ## Configuration
 
-Update the Keycloak settings in `src/keycloak.config.js`:
+Update Keycloak settings in [`src/keycloak.config.js`](src/keycloak.config.js).
 
 - Server URL
 - Realm
